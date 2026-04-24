@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="cv.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header id="cv-header">
+      <div class="header-inner">
+        <div class="header-text">
+          <h1 id="cv-name">Loading…</h1>
+          <p id="cv-title" class="subtitle"></p>
+          <p id="cv-location" class="meta"></p>
+        </div>
+        <ul id="cv-contact" class="contact-list"></ul>
+      </div>
+    </header>
+
+    <div class="cv-layout">
+      <!-- ===== MAIN COLUMN ===== -->
+      <main class="cv-main">
+
+        <!-- Summary -->
+        <section id="section-summary" class="cv-section">
+          <h2 class="section-title">Professional Summary</h2>
+          <p id="cv-summary"></p>
+        </section>
+
+        <!-- Experience -->
+        <section id="section-experience" class="cv-section">
+          <h2 class="section-title">Work Experience</h2>
+          <div id="cv-experience"></div>
+        </section>
+
+        <!-- Education -->
+        <section id="section-education" class="cv-section">
+          <h2 class="section-title">Education</h2>
+          <div id="cv-education"></div>
+        </section>
+
+      </main>
+
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="cv-sidebar">
+
+        <!-- Skills -->
+        <section id="section-skills" class="cv-section">
+          <h2 class="section-title">Skills</h2>
+          <div id="cv-skills"></div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="section-certifications" class="cv-section">
+          <h2 class="section-title">Certifications</h2>
+          <ul id="cv-certifications"></ul>
+        </section>
+
+        <!-- Languages -->
+        <section id="section-languages" class="cv-section">
+          <h2 class="section-title">Languages</h2>
+          <ul id="cv-languages"></ul>
+        </section>
+
+      </aside>
+    </div>
+
+    <footer class="cv-footer">
+      <p>Generated from <a href="/cv">/cv</a> API &bull; <span id="cv-year"></span></p>
+    </footer>
+
+    <script src="cv.js"></script>
+  </body>
+</html>

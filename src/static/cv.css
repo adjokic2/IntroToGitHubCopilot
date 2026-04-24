@@ -1,0 +1,273 @@
+/* ──────────────────────────────────────────────
+   cv.css  –  Curriculum Vitae single-page styles
+   ────────────────────────────────────────────── */
+
+:root {
+  --accent:    #1a237e;
+  --accent-lt: #3949ab;
+  --bg:        #f4f6fb;
+  --surface:   #ffffff;
+  --text:      #2c2c2c;
+  --muted:     #666;
+  --border:    #e0e4ef;
+  --tag-bg:    #e8eaf6;
+  --tag-text:  #1a237e;
+  --radius:    6px;
+  --shadow:    0 2px 8px rgba(0,0,0,.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--accent-lt); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ─────────────────────────────────── */
+#cv-header {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-lt) 100%);
+  color: #fff;
+  padding: 36px 48px;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#cv-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  margin-top: 4px;
+  opacity: .9;
+}
+
+.meta {
+  margin-top: 6px;
+  font-size: .9rem;
+  opacity: .75;
+}
+
+/* Contact list */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: right;
+}
+
+.contact-list a {
+  color: #c5cae9;
+  font-size: .88rem;
+}
+
+.contact-list a:hover { color: #fff; }
+
+.contact-icon {
+  margin-right: 6px;
+  font-size: .9rem;
+}
+
+/* ── Layout ─────────────────────────────────── */
+.cv-layout {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-areas: "main sidebar";
+  gap: 28px;
+  align-items: start;
+}
+
+.cv-main    { grid-area: main; }
+.cv-sidebar { grid-area: sidebar; }
+
+/* ── Sections ───────────────────────────────── */
+.cv-section {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+/* ── Summary ────────────────────────────────── */
+#cv-summary {
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* ── Timeline (experience + education) ─────── */
+.timeline-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.timeline-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.timeline-role {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.timeline-period {
+  font-size: .82rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.timeline-org {
+  font-size: .92rem;
+  color: var(--accent-lt);
+  margin-bottom: 8px;
+}
+
+.timeline-org em { color: var(--muted); font-style: normal; }
+
+.timeline-highlights {
+  padding-left: 18px;
+  color: var(--text);
+}
+
+.timeline-highlights li {
+  margin-bottom: 4px;
+  line-height: 1.55;
+  font-size: .93rem;
+}
+
+.timeline-details {
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+/* ── Skills ─────────────────────────────────── */
+.skill-group { margin-bottom: 16px; }
+.skill-group:last-child { margin-bottom: 0; }
+
+.skill-category {
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-tag {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: .82rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ── Certifications ─────────────────────────── */
+#cv-certifications { list-style: none; }
+
+.cert-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.cert-item:last-child { border-bottom: none; }
+.cert-item span { color: var(--muted); font-size: .85rem; }
+
+/* ── Languages ──────────────────────────────── */
+#cv-languages { list-style: none; }
+
+.lang-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .9rem;
+}
+
+.lang-item:last-child { border-bottom: none; }
+
+.lang-name { font-weight: 600; }
+.lang-level { color: var(--muted); font-size: .85rem; }
+
+/* ── Footer ─────────────────────────────────── */
+.cv-footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+/* ── Error state ────────────────────────────── */
+.load-error {
+  text-align: center;
+  padding: 40px;
+  color: #c62828;
+  font-size: 1rem;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  #cv-header { padding: 24px 20px; }
+
+  .header-inner { flex-direction: column; }
+
+  .contact-list { text-align: left; }
+
+  .cv-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "sidebar";
+  }
+
+  #cv-name { font-size: 1.8rem; }
+}
